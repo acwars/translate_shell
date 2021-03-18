@@ -1,0 +1,18 @@
+#!/bin/sh
+export TRANS_DIR=`dirname $0`
+gawk \
+-i "${TRANS_DIR}/metainfo.awk" \
+-i "${TRANS_DIR}/include/commons.awk" \
+-i "${TRANS_DIR}/include/utils.awk" \
+-i "${TRANS_DIR}/include/languages.awk" \
+-i "${TRANS_DIR}/include/help.awk" \
+-i "${TRANS_DIR}/include/parser.awk" \
+-i "${TRANS_DIR}/include/theme.awk" \
+-i "${TRANS_DIR}/include/translate.awk" \
+-i "${TRANS_DIR}/include/translator_interface.awk" \
+-i "${TRANS_DIR}/include/translators/google_translate.awk" \
+-i "${TRANS_DIR}/include/translators/apertium.awk" \
+-i "${TRANS_DIR}/include/translators/spell_checker.awk" \
+-i "${TRANS_DIR}/include/script.awk" \
+-i "${TRANS_DIR}/include/REPL.awk" \
+-f "${TRANS_DIR}/include/main.awk" -- "$@"
